@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    /* background-color: white; */
+}
+
+:root{
+    --font1: 'Roboto Slab', serif;
+    /* --font2: 'Bungee Spice', cursive; */
+    --main_color: rgb(50,50,156);
+}
+
+/* CSS For navigation section starts  */
+.navigation{
+    font-family: var(--font1);
+    /* font-family: var(--font1); */
+    /* height: 75px; */
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    padding-bottom: 10px;
+    padding-top: 10px;
+    width: 100%;
+    height: 8vh;
+    background-color: white;
+    position: fixed;
+    z-index: 1;
+}
+
+.nav-left{
+    font-size: 35px;
+    display: flex;
+    font-weight: bolder; 
+}
+
+.nav-left ul li{
+    list-style: none;
+    margin: 0 14px;
+}
+
+.nav-left ul li a{
+    font-family: var(--font1);
+    text-decoration: none;
+    margin-top: 0px;
+    /* color: black; */
+    color: rgb(50,50,156);
+}
+
+.nav-left span a {
+    text-decoration: none;
+    /* color: black; */
+    color: rgb(50,50,156);
+}
+
+.nav-left span a:hover {
+    color: var(--main_color);
+    /* font-size: 37px; */
+    }
+
+.nav-center ul li a:hover
+{
+  /* color: rgb(124, 137, 137); */
+  color: var(--main_color);
+}
+
+.nav-left ul{
+    display: flex;
+    align-items: center;
+ }
+
+ .nav-center{
+    font-size: 28px;
+    display: flex;
+}
+
+.nav-center ul li{
+    list-style: none;
+    margin: 0 14px;
+}
+
+.nav-center ul li a{
+    font-family: var(--font1);
+    text-decoration: none;
+    color: rgb(50, 50, 156);
+    font-weight: bold;
+}
+.nav-center ul li a:hover{
+    font-size: 32px;
+    display: flex;
+    color: rgb(50, 50, 156);
+    /* color: rgb(105, 103, 103); */
+    padding-bottom: 6px;
+ }
+
+.nav-center ul{
+    display: flex;
+    align-items: center;
+ }
+
+ .navigation:hover{
+    /* background-color: rgb(50,50,156); */
+    /* color:white; */
+}
+
+.btn{ 
+    font-size: 19px;
+    font-family: var(--font1);
+    border-radius: 3px;
+    /* color: rgba(62, 62, 62, 0.85); */
+    padding: 2px 6px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    border-radius: 3px;
+}
+
+.btn:hover{
+    color: antiquewhite;
+    background-color: var(--main_color);
+}
+
+.anchor-btn{
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+}
+
+.mg-r{
+    margin-right: 18px;
+    margin-left: 10px;
+}
+
+.mg-l{
+    margin-left: 8px;
+}
+
+.btn-style{
+    background-color: rgb(50, 50, 156);
+    font: var(--font1);
+    color:white;
+    padding: 5px;
+    padding-left: 11px;
+    padding-right: 11px;
+    font-size: 18px;
+    
+}
+.btn-style:hover{
+    background-color: rgb(248, 248, 248);
+    color: rgb(50, 50, 156);
+}
+
+/* CSS For navigation section ends  */
+
+/* Main section CSS starts */
+.main-section{
+    background: url('/img/back2.jpg') center bottom/cover ;
+    width: 100%;
+    height: 90vh;
+    
+}
+
+.center {
+    color: black;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+/* Home text Typing Animation  */
+.type-border{
+    /* border: 10px solid rgb(50, 50, 150); */
+    width: 80%;
+    margin: auto;
+    height: 60vh;
+    position: absolute;
+    top: 9vw;
+    left: 10%;
+    display: flex;
+    z-index: 0;
+    background-image: url('img/back.jpeg');
+    /* color: white; */
+}
+
+.wrapper {
+    margin-top: 10px;
+    height: 100vh;
+    /* This part is important for centering */
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .typing-demo {
+    width: 25ch;
+    animation: typing 4s steps(24), blink 0.8s step-end infinite alternate;
+    animation-iteration-count: infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    position:absolute;
+    top:20vh;
+    left: 14vw;
+    border-right: 3px solid;
+    font-family: fantasy;
+    font-size: 5em;
+  }
+  
+  @keyframes typing {
+    from  {
+      width: 0
+    }
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }
+
+  .about-us p {
+    font-size: 1.7em;
+    position:absolute;
+    text-align: center;
+    top: 65%;
+    left: 10%;
+    right: 10%;
+    color: white;
+    /* color: rgb(50,50,156); */
+    
+}
+
+/* Button css  */
+.btn-style-f{
+    background-color: rgb(53, 53, 179);
+    font: var(--font1);
+    padding: 5px;
+    color: white;
+    padding-left: 7px;
+    padding-right: 7px;
+    margin-top: 100px;
+    font-size: 18px;
+    
+}
+.btn-style-f:hover{
+    background-color: rgb(248, 248, 248);
+    color: rgb(76, 76, 240);
+
+} 
+
+/* Home text Typing Animation  */
+
+/* Main Section CSS ends  */
+
+
+/* footer section starts */
+ 
+.footer-section{
+    height: 10vh;
+    margin-top:auto;
+    background-color: white;
+    color:rgb(50,50,156);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+/* footer section ends  */
+
+
+ 
+
