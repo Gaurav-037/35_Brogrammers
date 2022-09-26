@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "326668249004",
+    "project_id": "easyedfinal",
+    "storage_bucket": "easyedfinal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326668249004:android:31e8cb145023566097fc09",
+        "android_client_info": {
+          "package_name": "com.example.easyed"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "326668249004-mfddnfm4rk8ugnbqfu4pgo8sg9opdr8u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuCHjOHLo3C7CMFxWNNAv_RgPhuEjXhDA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "326668249004-mfddnfm4rk8ugnbqfu4pgo8sg9opdr8u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
