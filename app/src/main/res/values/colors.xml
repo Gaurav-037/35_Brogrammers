@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="material_dynamic_primary10">#010e2c</color>
     <color name="material_dynamic_primary40">#00668b</color>
+    <color name="material_dynamic_neutral40">#5C5F61 </color>
 </resources>
