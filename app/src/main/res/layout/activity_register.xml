@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/calistoga"
-        android:text="EasyEd"
+        android:text="@string/easyed"
         android:textColor="@color/white"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -26,7 +26,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome"
+        android:text="@string/welcome"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -42,7 +42,7 @@
         android:layout_marginBottom="208dp"
         android:background="@color/material_dynamic_primary40"
         android:ems="10"
-        android:hint="Enter Gmail"
+        android:hint="@string/enter_gmail"
         android:inputType="textEmailAddress"
         android:textColorHint="#BBDEFB"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -50,7 +50,8 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Lname"
-        app:layout_constraintVertical_bias="0.088" />
+        app:layout_constraintVertical_bias="0.088"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/Lpassword"
@@ -59,7 +60,7 @@
         android:layout_marginBottom="240dp"
         android:background="@color/material_dynamic_primary40"
         android:ems="10"
-        android:hint="Enter Password"
+        android:hint="@string/enter_password"
         android:inputType="textPassword"
         android:textColorHint="#BBDEFB"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -67,13 +68,14 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Lgmail"
-        app:layout_constraintVertical_bias="0.219" />
+        app:layout_constraintVertical_bias="0.219"
+        android:autofillHints="" />
 
     <Button
-        android:id="@+id/signInButton"
+        android:id="@+id/signupbtn"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:text="Sign Up"
+        android:text="@string/sign_up"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -85,13 +87,13 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Have an account? Sign In"
+        android:text="@string/have_an_account_sign_in"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/signInButton"
+        app:layout_constraintEnd_toEndOf="@+id/signupbtn"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/signInButton"
-        app:layout_constraintTop_toBottomOf="@+id/signInButton"
+        app:layout_constraintStart_toStartOf="@+id/signupbtn"
+        app:layout_constraintTop_toBottomOf="@+id/signupbtn"
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
@@ -100,7 +102,7 @@
         android:layout_height="50dp"
         android:background="@color/material_dynamic_primary40"
         android:ems="10"
-        android:hint="Enter Name"
+        android:hint="@string/enter_name"
         android:inputType="textPersonName"
         android:textColorHint="#BBDEFB"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -108,7 +110,8 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.147" />
+        app:layout_constraintVertical_bias="0.147"
+        android:autofillHints="" />
 
     <ProgressBar
         android:id="@+id/progressBar2"
@@ -120,7 +123,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signInButton"
+        app:layout_constraintTop_toBottomOf="@+id/signupbtn"
         app:layout_constraintVertical_bias="0.301" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,8 +18,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import java.util.Objects;
-
 public class LoginActivity extends AppCompatActivity {
     Button button;
     TextView textView;
@@ -37,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         iProgressBar= findViewById(R.id.progressBar);
 
 
-        button= findViewById(R.id.signInButton);
+        button= findViewById(R.id.signupbtn);
         textView= findViewById(R.id.textView3);
 
         textView.setOnClickListener(new View.OnClickListener() {
@@ -74,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
                         }
                         else {
                             Toast.makeText(LoginActivity.this, "Error: "+ task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-
+                            iProgressBar.setVisibility(View.GONE);
                         }
                     }
                 });

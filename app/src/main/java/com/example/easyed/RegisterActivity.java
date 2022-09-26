@@ -1,8 +1,5 @@
 package com.example.easyed;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -12,6 +9,9 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -32,65 +32,57 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        button= findViewById(R.id.signInButton);
-        textView= findViewById(R.id.textView3);
-        rEmail= findViewById(R.id.Lgmail);
-        rName= findViewById(R.id.Lname);
-        rPassword= findViewById(R.id.Lpassword);
-        firebaseAuth= FirebaseAuth.getInstance();
-
+        button = findViewById(R.id.signupbtn);
+        textView = findViewById(R.id.textView3);
+        rEmail = findViewById(R.id.Lgmail);
+        rName = findViewById(R.id.Lname);
+        rPassword = findViewById(R.id.Lpassword);
+        progressBar= findViewById(R.id.progressBar2);
+        firebaseAuth = FirebaseAuth.getInstance();
 
 
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentOne= new Intent(RegisterActivity.this, LoginActivity.class);
+                Intent intentOne = new Intent(RegisterActivity.this, LoginActivity.class);
                 startActivity(intentOne);
                 finish();
             }
         });
 
+
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String Email= rEmail.getText().toString().trim();
-                String Password= rPassword.getText().toString().trim();
-                String Name= rName.getText().toString().trim();
+                String Email = rEmail.getText().toString().trim();
+                String Password = rPassword.getText().toString().trim();
+                String Name = rName.getText().toString().trim();
 
 
-                if (TextUtils.isEmpty(Email) || TextUtils.isEmpty(Password) || TextUtils.isEmpty(Name)){
+                if (TextUtils.isEmpty(Email) || TextUtils.isEmpty(Password) || TextUtils.isEmpty(Name)) {
                     rEmail.setError("Cannot be empty");
                     rPassword.setError("Cannot be empty");
                     rName.setError("Cannot be empty");
                     return;
                 }
-
-                if (firebaseAuth.getCurrentUser()!=null){
-                    Toast.makeText(RegisterActivity.this, "Gmail Already used", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-                    finish();
-
-                }
                 progressBar.setVisibility(View.VISIBLE);
-
-
 
                 firebaseAuth.createUserWithEmailAndPassword(Email, Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
-                    if (task.isSuccessful()){
-                        Toast.makeText(RegisterActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(), SelectActivity.class));
-                        finish();
-                        progressBar.setVisibility(View.GONE);
-                    }
-                    else{
-                        Toast.makeText(RegisterActivity.this, "Error: "+ Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                        if (task.isSuccessful()) {
+                            Toast.makeText(RegisterActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(RegisterActivity.this, SelectActivity.class));
+                            finish();
+                            progressBar.setVisibility(View.GONE);
+                        } else {
+                            Toast.makeText(RegisterActivity.this, "Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
 
-                    }
-                    progressBar.setVisibility(View.GONE);
+                        }
+                        progressBar.setVisibility(View.GONE);
 
                     }
 

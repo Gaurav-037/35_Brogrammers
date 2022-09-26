@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">EasyEd</string>
+    <string name="easyed">EasyEd</string>
+    <string name="welcome">Welcome</string>
+    <string name="enter_gmail">Enter Gmail</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="have_an_account_sign_in">Have an account? Sign In</string>
+    <string name="enter_name">Enter Name</string>
 </resources>
