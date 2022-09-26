@@ -60,12 +60,21 @@ public class RegisterActivity extends AppCompatActivity {
                 String Name = rName.getText().toString().trim();
 
 
-                if (TextUtils.isEmpty(Email) || TextUtils.isEmpty(Password) || TextUtils.isEmpty(Name)) {
+                if (TextUtils.isEmpty(Email)) {
                     rEmail.setError("Cannot be empty");
-                    rPassword.setError("Cannot be empty");
-                    rName.setError("Cannot be empty");
                     return;
                 }
+                if (TextUtils.isEmpty(Password)){
+                    rPassword.setError("Cannot be empty");
+                    return;
+                }
+                if (Password.length()<8){
+                    rPassword.setError("Must be greater than 8");
+                }
+                if (TextUtils.isEmpty(Name)){
+                    rName.setError("Cannot be empty");
+                }
+
                 progressBar.setVisibility(View.VISIBLE);
 
                 firebaseAuth.createUserWithEmailAndPassword(Email, Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -78,9 +87,7 @@ public class RegisterActivity extends AppCompatActivity {
                             finish();
                             progressBar.setVisibility(View.GONE);
                         } else {
-                            Toast.makeText(RegisterActivity.this, "Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
-
+                            Toast.makeText(RegisterActivity.this, "Error: "+ task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                         progressBar.setVisibility(View.GONE);
 
