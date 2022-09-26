@@ -45,6 +45,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intentOne= new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intentOne);
+                finish();
             }
         });
 
@@ -60,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }
 
-                iProgressBar.setVisibility(View.GONE);
+                iProgressBar.setVisibility(View.VISIBLE);
 
                 iFirebaseAuth.signInWithEmailAndPassword(Email,Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -68,6 +69,7 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()){
                             Toast.makeText(LoginActivity.this, "Successful", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(), SelectActivity.class));
+                            iProgressBar.setVisibility(View.GONE);
 
                         }
                         else {

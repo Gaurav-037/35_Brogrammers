@@ -46,6 +46,7 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intentOne= new Intent(RegisterActivity.this, LoginActivity.class);
                 startActivity(intentOne);
+                finish();
             }
         });
 
@@ -55,11 +56,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String Email= rEmail.getText().toString().trim();
                 String Password= rPassword.getText().toString().trim();
                 String Name= rName.getText().toString().trim();
-                if (firebaseAuth.getCurrentUser()!=null){
-                    Toast.makeText(RegisterActivity.this, "Already used", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
 
-                }
 
                 if (TextUtils.isEmpty(Email) || TextUtils.isEmpty(Password) || TextUtils.isEmpty(Name)){
                     rEmail.setError("Cannot be empty");
@@ -67,6 +64,14 @@ public class RegisterActivity extends AppCompatActivity {
                     rName.setError("Cannot be empty");
                     return;
                 }
+
+                if (firebaseAuth.getCurrentUser()!=null){
+                    Toast.makeText(RegisterActivity.this, "Gmail Already used", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                    finish();
+
+                }
+                progressBar.setVisibility(View.VISIBLE);
 
 
 
@@ -78,7 +83,7 @@ public class RegisterActivity extends AppCompatActivity {
                         Toast.makeText(RegisterActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(getApplicationContext(), SelectActivity.class));
                         finish();
-
+                        progressBar.setVisibility(View.GONE);
                     }
                     else{
                         Toast.makeText(RegisterActivity.this, "Error: "+ Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
@@ -88,8 +93,11 @@ public class RegisterActivity extends AppCompatActivity {
                     progressBar.setVisibility(View.GONE);
 
                     }
+
                 });
             }
+
         });
+
     }
 }
