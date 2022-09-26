@@ -39,11 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
         rPassword= findViewById(R.id.Lpassword);
         firebaseAuth= FirebaseAuth.getInstance();
 
-        if (firebaseAuth.getCurrentUser()!=null){
-            Toast.makeText(this, "Already Registered", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-            finish();
-        }
+
 
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +55,11 @@ public class RegisterActivity extends AppCompatActivity {
                 String Email= rEmail.getText().toString().trim();
                 String Password= rPassword.getText().toString().trim();
                 String Name= rName.getText().toString().trim();
+                if (firebaseAuth.getCurrentUser()!=null){
+                    Toast.makeText(RegisterActivity.this, "Already used", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+
+                }
 
                 if (TextUtils.isEmpty(Email) || TextUtils.isEmpty(Password) || TextUtils.isEmpty(Name)){
                     rEmail.setError("Cannot be empty");
@@ -76,6 +77,7 @@ public class RegisterActivity extends AppCompatActivity {
                     if (task.isSuccessful()){
                         Toast.makeText(RegisterActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(getApplicationContext(), SelectActivity.class));
+                        finish();
 
                     }
                     else{
