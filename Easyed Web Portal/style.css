@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+
 *{
     margin: 0px;
     padding: 0px;
@@ -9,7 +10,8 @@
 :root{
     --font1: 'Roboto Slab', serif;
     /* --font2: 'Bungee Spice', cursive; */
-    --main_color: rgb(50,50,156);
+    --main_color: rgb(53, 53, 179);
+    /* --main_color: rgb(50,50,156); */
 }
 
 /* CSS For navigation section starts  */
@@ -31,7 +33,7 @@
 }
 
 .nav-left{
-    font-size: 35px;
+    font-size: 2.6em;
     display: flex;
     font-weight: bolder; 
 }
@@ -47,6 +49,7 @@
     margin-top: 0px;
     /* color: black; */
     color: rgb(50,50,156);
+    /* color: rgb(53, 53, 179); */
 }
 
 .nav-left span a {
@@ -162,10 +165,13 @@
 }
 
 .center {
-    color: black;
+    color: var(--main_color);
+    font-family: var(--font1);
     text-align: center;
-    font-size: 32px;
-    margin-bottom: 10px;
+    font-size: 2.5em;
+    margin-bottom: 4vh;
+    margin-top: 1vh;
+
 }
 
 /* Home text Typing Animation  */
@@ -246,11 +252,14 @@
     color: rgb(76, 76, 240);
 
 } 
+
 /* Home text Typing Animation  */
+
 /* Main Section CSS ends  */
 
 
-/* footer section starts */ 
+/* footer section starts */
+ 
 .footer-section{
     height: 10vh;
     margin-top:auto;
@@ -259,9 +268,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-/* footer section ends  */
 
+}
+
+
+/* footer section ends  */
 
 /* login css start*/
 .set-page {
@@ -353,7 +364,8 @@
     border-radius:1%;
 }
 #s-border h2{
-    color: rgb(50,50,156);
+    /* color: rgb(50,50,156); */
+    color: rgb(53, 53, 179);
     font-family: var(--font1);
     font-size: 2.4em;
 }
@@ -366,9 +378,53 @@
     margin-right: 10vw;
     padding: 20px;
 }
-
 /* sign-up css end */
 
+/* scholarship and loan section in the main  */
+.product{
+    display: flex;
+    flex-direction: column;
+}
+#product{
+    margin-top: 1vh;
+}
 
- 
+.services-container {
+    top: 0px;
+    margin-bottom: 50px;
+    margin-top: 3vh;
+}
+
+#services {
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    top: 0px;
+    margin: 30px;
+    margin-top: 0px;
+}
+
+#services .box {
+    /* border: 2px solid black; */
+    margin: 3px 10px;
+    padding: 25px;
+    background-color: rgb(229, 230, 224);
+    border-radius: 25px;
+}
+
+#services .box img {
+    display: block;
+    height: 160px;
+    margin: auto;
+}
+
+#services .box p {
+    font-family: var(--font1);
+    font-size: 1.1em;
+}
+/* scholarship and loan section in the main  */
+
+
+/* about page */
+
 
