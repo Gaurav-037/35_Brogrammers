@@ -9,31 +9,31 @@
 </head>
 <body>
 
-  <!-- navigation menu starts  -->
-  <nav class="navigation ">
-    <div class="nav-left">
-        <span>
-             <a href="" class="mg-l">Easy Ed</a> 
-        </span>
-    </div>
+ <!-- navigation menu starts  -->
+    <nav class="navigation ">
+        <div class="nav-left">
+            <span>
+                 <a href="" class="mg-l">Easy Ed</a> 
+            </span>
+        </div>
 
-    <div class="nav-center">
-        <ul>
-            <li><a href="/">Home </a> </li>
-            <li><a href="/">Scholarships</a> </li>
-            <li><a href="/">Loan</a> </li>
-            <li><a href="/">counsiling </a> </li>
-            <li><a href="/about.html">About us</a> </li>
-        </ul>
-    </div>
+        <div class="nav-center">
+            <ul>
+                <li><a href="/">Home </a> </li>
+                <li><a href="/">Scholarships</a> </li>
+                <li><a href="/">Loan</a> </li>
+                <li><a href="/">counsiling </a> </li>
+                <li><a href="./about.html">About us</a> </li>
+            </ul>
+        </div>
 
-    <div class="nav-right">
-        <a href="/login.html" class="btn btn-style anchor-btn">Login </a>
-        <a href="/signup.html" class="btn btn-style mg-r anchor-btn">Signup </a>
-        </form>
-    </div>
-</nav>
-<!-- navigation menu ends -->
+        <div class="nav-right">
+            <a href="./login.php" class="btn btn-style anchor-btn">Login </a>
+            <a href="./signup.php" class="btn btn-style mg-r anchor-btn">Signup </a>
+            </form>
+        </div>
+    </nav>
+    <!-- navigation menu ends -->
 
 
 
