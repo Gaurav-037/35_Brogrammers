@@ -83,7 +83,9 @@ public class RegisterActivity extends AppCompatActivity {
 
                         if (task.isSuccessful()) {
                             Toast.makeText(RegisterActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(RegisterActivity.this, SelectActivity.class));
+                            startActivity(new Intent(RegisterActivity.this, SelectActivity.class)
+                                    .putExtra("Naav", Name)
+                                    .putExtra("Gmail", Email));
                             finish();
                             progressBar.setVisibility(View.GONE);
                         } else {

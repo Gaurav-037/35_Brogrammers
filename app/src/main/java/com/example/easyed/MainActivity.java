@@ -5,10 +5,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.EditText;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
+    EditText editText;
     String[] bankNames={"State Bank of India", "Bank of Maharashtra", "Bank of India", "Axis Bank", "ICICI Bank", "Bank of Baroda", "Prerna Bank", "HDFC Bank",
             "Kotak Bank", "Canara Bank"};
 
